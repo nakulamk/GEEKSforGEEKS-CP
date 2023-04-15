@@ -1,15 +1,13 @@
 # Return true if str is binary, else false
 def isBinary(str):
     #code here
-    for i in str:
-        if int(i) == 1:
-            continue
-        elif int(i) == 0:
-            continue
-        else:
+    x = "01"
+    for c in str:
+        if c not in x:
             return 0
     return 1
-        
+            
+
 
 #{ 
  # Driver Code Starts
