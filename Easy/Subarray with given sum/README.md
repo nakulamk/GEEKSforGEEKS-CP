@@ -49,7 +49,7 @@ You don't need to read input or print anything. The task is to complete the func
 
 
 
-<h3>
+<p>
   class Solution:
     def subArraySum(self,arr, n, s): 
        #Write your code here
@@ -71,4 +71,4 @@ You don't need to read input or print anything. The task is to complete the func
         
         
 
-</h3>
+</p>
