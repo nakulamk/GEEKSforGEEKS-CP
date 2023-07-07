@@ -44,3 +44,31 @@ You don't need to read input or print anything. The task is to complete the func
 <span style="font-size:18px">1 &lt;= A</span><sub>i</sub><span style="font-size:18px"> &lt;= 10<sup>9</sup></span><br>
 <span style="font-size:18px">0&lt;= S</span><span style="font-size:18px">&nbsp;&lt;= 10<sup>14</sup></span></p>
 </div><p><span style=font-size:18px><strong>Company Tags : </strong><br><code>Amazon</code>&nbsp;<code>Facebook</code>&nbsp;<code>Google</code>&nbsp;<code>Visa</code>&nbsp;<br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Algorithms</code>&nbsp;<code>Arrays</code>&nbsp;<code>Data Structures</code>&nbsp;<code>prefix-sum</code>&nbsp;<code>Searching</code>&nbsp;<code>sliding-window</code>&nbsp;
+
+
+
+
+
+<h3>
+  class Solution:
+    def subArraySum(self,arr, n, s): 
+       #Write your code here
+       start=0
+       end=0
+       current_sum=0
+       while end<n:
+           current_sum+=arr[end]
+           
+           while current_sum>s and s!=0:
+               current_sum-=arr[start]
+               start+=1
+           if current_sum==s:
+               return [start+1,end+1]
+           
+           end+=1
+          
+       return [-1] 
+        
+        
+
+</h3>
