@@ -20,6 +20,7 @@
 #                 diction[temp.data]+=1
 #             else:
 #                 diction[temp.data]=1
+            #   temp=temp.next
         
         
 #         dummyNode=Node(-1)
@@ -57,7 +58,8 @@ class Solution:
                 prev=prev.next
             a=a.next
         prev.next=None
-        return dummy.next
+        head=dummy.next
+        return head
 
 #{ 
  # Driver Code Starts
