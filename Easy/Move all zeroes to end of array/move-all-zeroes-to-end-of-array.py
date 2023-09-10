@@ -2,19 +2,32 @@
 
 class Solution:
     def pushZerosToEnd(self,arr, n):
-       count=0
-       for i in range(n):
-           if arr[i]!=0:
-               arr[count]=arr[i]
-               count+=1
-       while count<n:
-           arr[count]=0
-           count+=1
-            
-       
-           
-            
-            
+        # code here
+        #n = len(A)
+        
+        # approach 1
+        j = 0
+        for i in range(n):
+            if arr[i] != 0:
+                arr[j], arr[i] = arr[i], arr[j]  # Partitioning the array
+                j += 1
+        
+        
+        # approach 2
+        a = []
+        zcount = 0
+        
+        for i in arr:
+            if i!=0:
+                a.append(i)
+            else:
+                zcount+=1
+        while(zcount!=0):
+            a.append(0)
+            zcount-=1
+        for i in range(len(a)):
+            arr[i]=a[i]
+        return arr
 
 
 #{ 
