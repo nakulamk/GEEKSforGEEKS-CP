@@ -10,35 +10,41 @@ class Node:
         self.bottom=None
         
 '''
-
-def flatten(root):
-    #Your code here
-    li=[]
-    temp=root
-    while temp is not None:
-        li.append(temp.data)
-        bottom=temp.bottom
-        while bottom is not None:
-            li.append(bottom.data)
-            bottom=bottom.bottom
-        temp=temp.next
+class Solution():
     
-    li.sort()
-    
-    dummyNode=Node(-1)
-    cur=dummyNode
-    
-    for i in range(len(li)):
-        newNode=Node(li[i])
-        cur.next=newNode
-        cur=cur.next
-    
-    temp2=dummyNode.next
-    # return temp2
-    
-    while temp2 is not None:
-        print(temp2.data,end=" ")
-        temp2=temp2.next
+    def flatten(self,root):
+        li=[]
+        temp=root
+        while temp is not None:
+            li.append(temp.data)
+            bottom=temp.bottom
+            while bottom is not None:
+                li.append(bottom.data)
+                bottom=bottom.bottom
+        
+            temp=temp.next
+            
+        li.sort()
+        
+        dummyNode=Node(-1)
+        cur=dummyNode
+        
+        for i in range(len(li)):
+            
+            newNode=Node(li[i])
+            cur.next=newNode
+            cur=cur.next
+            
+        temp2=dummyNode.next
+        # return temp2
+        
+        while temp2 is not None:
+            print(temp2.data,end=" ")
+            temp2=temp2.next
+        
+        
+        
+        
 
 
 #{ 
@@ -84,7 +90,7 @@ if __name__=="__main__":
             a1=listo[it]
             it+=1
             temp=Node(a1)
-            if flag == 1:
+            if flag is 1:
                 head=temp
                 pre=temp
                 flag=0
@@ -98,14 +104,15 @@ if __name__=="__main__":
                 a=listo[it]
                 it+=1
                 tempB=Node(a)
-                if flag1 == 1:
+                if flag1 is 1:
                     temp.bottom=tempB
                     preB=tempB
                     flag1=0
                 else:
                     preB.bottom=tempB
                     preB=tempB
-        root=flatten(head)
+        obj=Solution()
+        root=obj.flatten(head)
         printList(root)
         
         t-=1
