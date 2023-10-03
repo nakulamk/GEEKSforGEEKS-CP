@@ -4,7 +4,6 @@ class Solution:
     def peakElement(self,arr, n):
         # Code here
         return arr.index(max(arr))
-
 #{ 
  # Driver Code Starts
 if __name__=='__main__':
